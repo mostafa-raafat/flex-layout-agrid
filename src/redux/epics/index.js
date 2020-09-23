@@ -1,9 +1,7 @@
-import { combineEpics } from "redux-observable";
+import { combineEpics } from 'redux-observable';
 
-import mapEpic from "./MapEpic";
+import mapEpic from './MapEpic';
 
-const epics = combineEpics(
-  ...mapEpic,
-);
+const epics = combineEpics(...mapEpic);
 
 export default epics;

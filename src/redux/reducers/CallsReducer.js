@@ -1,20 +1,18 @@
-const callsReducer = (state = [], action) => {
+const callsReducer = (state = {}, action) => {
   switch (action.type) {
     case 'CALL_ADDED':
-      return [
+      return {
         ...state,
-        action.payload
-      ]
+        [action.payload.attributes.id]: action.payload
+      };
     case 'CALL_UPDATED':
-      const newState = state.map(el => {
-        if (el.attributes.id === action.payload.attributes.id)
-          return action.payload;
-        return el
-      });
-      return newState;
+      return {
+        ...state,
+        [action.payload.attributes.id]: action.payload
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default callsReducer
+export default callsReducer;

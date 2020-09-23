@@ -1,5 +1,5 @@
-import { combineReducers } from "redux";
-import callsReducer from './CallsReducer'
+import { combineReducers } from 'redux';
+import callsReducer from './CallsReducer';
 
 const reducers = combineReducers({
   calls: callsReducer

@@ -1,11 +1,11 @@
-html,body
-{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow:hidden;
-    font-size: 12px;
-    font-family: Arial, sans-serif;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
 }
 
 body {
@@ -18,17 +18,17 @@ body {
 }
 
 #container {
-    left: 10px;
-    top: 10px;
-    right: 10px;
-    bottom: 10px;
-    position: absolute;
-    overflow: hidden;
-    background-color: white;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  position: absolute;
+  overflow: hidden;
+  background-color: white;
 }
 
 .webmap {
   height: 100%;
 }
 
-@import '../node_modules/flexlayout-react/style/dark.css'
+@import '../node_modules/gss-flex-layout/style/light.css';

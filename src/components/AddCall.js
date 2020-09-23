@@ -1,33 +1,41 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { addCall } from '../redux/actions'
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addCall } from '../redux/actions';
 
-const AddCall = ({ addCall }) => {
-  let input
-
+// eslint-disable-next-line react/prop-types
+const AddCall = ({ addNewCall }) => {
+  let input;
   return (
     <div>
       <form
         onSubmit={e => {
-          e.preventDefault()
+          e.preventDefault();
           if (!input.value.trim()) {
-            return
+            return;
           }
-          addCall(input.value)
-          input.value = ''
+          addNewCall(input.value);
+          input.value = '';
         }}
       >
-        <input ref={node => (input = node)} />
+        <input
+          // eslint-disable-next-line no-return-assign
+          ref={node => (input = node)}
+        />
         <button type="submit">Add Call</button>
       </form>
     </div>
-  )
-}
+  );
+};
+
+AddCall.propTypes = {
+  addNewCall: PropTypes.func.isRequired
+};
 
 const mapDispatchToProps = dispatch => {
   return {
-    addCall: value => dispatch(addCall(value)),
+    addNewCall: value => dispatch(addCall(value))
   };
 };
 
-export default connect(null, mapDispatchToProps)(AddCall)
+export default connect(null, mapDispatchToProps)(AddCall);
